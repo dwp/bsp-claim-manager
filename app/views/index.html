@@ -12,30 +12,48 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-l">
       Claim Manager Prototype
     </h1>
-    <p class="govuk-body">This prototype has been created in Private Beta to test iterations to Claim Manager. This is the system agents use to process Bereavement Support Payment applications.</p>
-
-    <h1 class="govuk-heading-m">
-      <span class="govuk-caption-m">w/c 05.06.23</span>
-      User Research
-    </h1>
     
-    <p class="govuk-body">The aim of this research is to test an agents journey to verify Child Benefit. Existing content has had to be updated to align with policy.</p>
-    <p class="govuk-body">Additional iterations include:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>restructure of agent tasks</li>
-      <li>new 'claim complete' page</li>
-      <li>new content on claim history.</li>
-    </ul><br>    
-    <button onclick="javascript:location.href='/cb-flow-1/claim-tasklist'" class="govuk-button" data-module="govuk-button">
-      Journey A
-    </button>
-    <button onclick="javascript:location.href='/cb-flow-2/claim-tasklist'" class="govuk-button" data-module="govuk-button">
-      Journey B
-    </button>
-    <button onclick="javascript:location.href='/payment-flow/claim-tasklist'" class="govuk-button" data-module="govuk-button">
-      Journey C
-    </button>
-
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Iterations for automated processing
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          <p class="govuk-body">As we introduce more automated checks, screens within claim manager need updated.</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Agent UR: Verifying ChB entitlement 
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+          <p class="govuk-body">The aim of this research (w/c 05.06.23) is to test an agents journey to verify Child Benefit. Existing content has been updated to align with policy.</p>
+          <p class="govuk-body">Iterations include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>restructure of agent tasks</li>
+            <li>new 'claim complete' page</li>
+            <li>new content on claim history.</li>
+          </ul><br>    
+          <button onclick="javascript:location.href='/cb-flow-1/claim-tasklist'" class="govuk-button" data-module="govuk-button">
+            Journey A
+          </button>
+          <button onclick="javascript:location.href='/cb-flow-2/claim-tasklist'" class="govuk-button" data-module="govuk-button">
+            Journey B
+          </button>
+          <button onclick="javascript:location.href='/payment-flow/claim-tasklist'" class="govuk-button" data-module="govuk-button">
+            Journey C
+          </button>
+        </div>
+      </div>
+    </div>
               
   </div>
 </div>
