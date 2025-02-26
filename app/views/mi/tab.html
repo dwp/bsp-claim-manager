@@ -1,0 +1,226 @@
+{% extends "layouts/main3.html" %}
+
+{% block pageTitle %}
+  Item 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-!-padding-top-2">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Friday 21 February 2025</span>
+        <h1 class="govuk-heading-xl">Today's summary</h1>
+      </div>
+    </div>
+  
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Date range
+              </h1>
+            </legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              From
+            </legend>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              To
+            </legend>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+  
+  
+        <div class="govuk-form-group">
+        
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Channel
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Online
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                  Telephone
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                  Paper
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        <div class="govuk-form-group">
+  
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Claim type
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status">
+                  Married
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Civil partnership
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                  Living together
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Apply filters"
+    }) }}
+  
+    {{ govukButton({
+      text: "Clear filters",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+  
+      </div>
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ xGovukSecondaryNavigation({
+
+          visuallyHiddenTitle: "Secondary menu",
+          items: [{
+            text: "Overview",
+            href: "#",
+            current: true
+          }, {
+            text: "Staff list",
+            href: "#"
+          }, {
+            text: "Projects",
+            href: "#"
+          }, {
+            text: "Settings",
+            href: "#"
+          }]
+        }) }}
+        
+
+       
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

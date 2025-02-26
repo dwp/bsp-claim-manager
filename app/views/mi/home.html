@@ -1,0 +1,473 @@
+{% extends "layouts/main2.html" %}
+
+{% block pageTitle %}
+  Start a claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-!-padding-top-2">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Friday 21 February 2025</span>
+        <h1 class="govuk-heading-xl">Today's summary</h1>
+      </div>
+    </div>
+  
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Date range
+              </h1>
+            </legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              From
+            </legend>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              To
+            </legend>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+  
+  
+        <div class="govuk-form-group">
+        
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Channel
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Online
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                  Telephone
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                  Paper
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        <div class="govuk-form-group">
+  
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Claim type
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status">
+                  Married
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Civil partnership
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                  Living together
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Apply filters"
+    }) }}
+  
+    {{ govukButton({
+      text: "Clear filters",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+  
+      </div>
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ xGovukSecondaryNavigation({
+
+          visuallyHiddenTitle: "Secondary menu",
+          items: [{
+            text: "Overview",
+            href: "#",
+            current: true
+          }, {
+            text: "Automation",
+            href: "#"
+          }, {
+            text: "Dissallowed",
+            href: "#"
+          }, {
+            text: "Changes of circs",
+            href: "#"
+          }]
+        }) }}
+
+        <br><br>
+       
+        <!-- <h2 class="govuk-heading-m">Claims processed</h2> -->
+
+        <div class="govuk-grid-column-one-half" style="
+        padding-left: 0px;
+        padding-right: 15px;">
+
+      <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Decision
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Allowed
+                </dt>
+                <dd class="govuk-summary-list__actions">
+                  38
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Dissallowed
+                </dt>
+                <dd class="govuk-summary-list__actions">
+                  8
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-half" style="
+      padding-right: 0px;
+      padding-left: 15px;">
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Rate
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Higher
+                </dt>
+                <dd class="govuk-summary-list__actions">
+                  8
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Standard
+                </dt>
+                <dd class="govuk-summary-list__actions">
+                  30
+                </dd>
+              </div>
+            </dl>
+          </div>
+       
+        </div>
+        </div>
+
+        <h2 class="govuk-heading-m">Automation</h2>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              National Insurance contributions
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Success rate
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  98%
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  system down
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  1%
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  could not find based on NI 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  1%
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Marriage
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Success rate
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  56%
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  LEV system down
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  5%
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Names don't match 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  8%
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Child benefit
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Success rate
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  78%
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  System error
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  5%
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Unkown error
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  8%
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Residency
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Success rate
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  56%
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Names don't match
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  5%
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  System error
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  8%
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

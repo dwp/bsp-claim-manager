@@ -1,0 +1,58 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{ dwpHeader({
+name: "Manage Bereavement Support Payment",
+serviceHref: '/',
+container:true
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "/mi/home",
+      text: "Claims processed",
+      active: true
+    },
+    {
+      href: "/mi/tab",
+      text: "Claims recieved"
+    }
+  ]
+}) }}
+
+<div class="govuk-width-container">
+
+{{ xGovukSecondaryNavigation({
+
+  visuallyHiddenTitle: "Secondary menu",
+  items: [{
+    text: "Overview",
+    href: "#",
+    current: true
+  }, {
+    text: "Automation",
+    href: "#"
+  }, {
+    text: "Dissallowed",
+    href: "#"
+  }, {
+    text: "Changes of crics",
+    href: "#"
+  }]
+}) }}
+
+</div>
+
+<!-- <div class="govuk-width-container app-subnav"><nav><ul><li><a class="govuk-link" href="/">Start a new claim</a></li><li><a class="govuk-link" href="/">Find a claim</a></li></ul></nav></div> -->
+
+{% endblock %}
