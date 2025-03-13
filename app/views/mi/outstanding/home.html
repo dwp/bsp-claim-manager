@@ -1,17 +1,78 @@
-{% extends "layouts/main3.html" %}
+{% extends "layouts/main2.html" %}
+
+{% block header %}
+
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{
+  dwpHeader({
+      serviceName: "Bereavement Support Payment",
+      serviceHref: '/index',
+      container: true,
+      navigation: {
+        selectedItem: "/mi/outstanding/home",
+        items: [
+            {
+                href: "/mi/made/home",
+                text: "Claims made"
+            },
+            {
+                href: "/mi/processed/home",
+                text: "Processed claims"
+            },
+            {
+                href: "/mi/outstanding/home",
+                text: "Outstanding claims"
+            }
+        ]
+    }  
+  })
+}}
+
+
+<div class="govuk-width-container">
+
+{% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+
+  {{ 
+    dwpHorizontalNavigation({
+          selectedItem: "/mi/outstanding/home",
+          items: [
+              {
+                text: "Overview",
+                href: "/mi/outstanding/home",
+                id: "s-item-1"
+              },
+              {
+                text: "Claims at RVU",
+                href: "/mi/outstanding/rvu",
+                id: "/mi/outstanding/rvu"
+              },
+              {
+                text: "item 3",
+                href: "",
+                id: "s-item-3"
+              }
+          ]
+      })
+  }}
+
+</div>
+
+{% endblock %}
 
 {% block pageTitle %}
-  Item 2 – {{ serviceName }} – GOV.UK Prototype Kit
+  Claims made overview – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-!-padding-top-2">
+  <main class="govuk-main-wrapper" style="padding-top: 4px">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Friday 21 February 2025</span>
-        <h1 class="govuk-heading-xl">Today's summary</h1>
+        <!-- <span class="govuk-caption-xl">Wednesday 12 March 2025</span> -->
+        <!-- <h1 class="govuk-heading-xl">Today's summary</h1> -->
       </div>
     </div>
   
@@ -20,7 +81,7 @@
 
       <div class="govuk-grid-column-one-third">
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
@@ -89,10 +150,9 @@
               </div>
             </div>
           </fieldset>
-        </div>
+        </div> -->
   
-  
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
         
           <fieldset class="govuk-fieldset">
   
@@ -132,16 +192,14 @@
   
           </fieldset>
   
-        </div>
+        </div> -->
   
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
   
           <fieldset class="govuk-fieldset">
   
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-  
-              Claim type
-  
+              [add content]
             </legend>
   
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -149,7 +207,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="status">
-                  Married
+                  Excluding RUV
                 </label>
   
               </div>
@@ -157,7 +215,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
                 <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                  Civil partnership
+                  Filter 2
                 </label>
   
               </div>
@@ -165,7 +223,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
                 <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                  Living together
+                  Filter 3
                 </label>
   
               </div>
@@ -174,53 +232,119 @@
   
           </fieldset>
   
-        </div>
+        </div> -->
   
-        {% from "govuk/components/button/macro.njk" import govukButton %}
+        <!-- {% from "govuk/components/button/macro.njk" import govukButton %} -->
   
-  <div class="govuk-button-group">
-    {{ govukButton({
+  <!-- <div class="govuk-button-group"> -->
+    <!-- {{ govukButton({
       text: "Apply filters"
     }) }}
-  
-    {{ govukButton({
+   -->
+    <!-- {{ govukButton({
       text: "Clear filters",
       classes: "govuk-button--secondary"
-    }) }}
-  </div>
+    }) }} -->
+  <!-- </div> -->
   
       </div>
 
 
       <div class="govuk-grid-column-two-thirds">
 
-        {{ xGovukSecondaryNavigation({
+        <span class="govuk-caption-xl">Outstanding claims</span>
+        <h1 class="govuk-heading-xl">341</h1>   
 
-          visuallyHiddenTitle: "Secondary menu",
-          items: [{
-            text: "Overview",
-            href: "#",
-            current: true
-          }, {
-            text: "Staff list",
-            href: "#"
-          }, {
-            text: "Projects",
-            href: "#"
-          }, {
-            text: "Settings",
-            href: "#"
-          }]
-        }) }}
+        <span class="govuk-caption-xl">Average actual outstanding time</span>
+        <h1 class="govuk-heading-xl">354.36 days</h1>  
+
+
         
+        <h2 class="govuk-heading-m">Oldest outstanding claims</h2>
+        <p>This is oldest outstanding claims excluding claims sent to the Relationship Verification Unit.</p>
 
-       
+        <table class="govuk-table">
+          <!-- <caption class="govuk-table__caption govuk-table__caption--m">Outstanding claims</caption><br> -->
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">National Insurance number</th>
+              <th scope="col" class="govuk-table__header">Days outstanding</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">NA 04 36 40 C</a></th>
+              <td class="govuk-table__cell">1342</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">KC 04 26 41 C</a></th>
+              <td class="govuk-table__cell">1273</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">TK 01 46 40 C</a></th>
+              <td class="govuk-table__cell">1273</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">LZ 68 34 10 A</a></th>
+              <td class="govuk-table__cell">1177</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">AK 56 23 40 C</a></th>
+              <td class="govuk-table__cell">1166</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">AK 43 36 40 A</a></th>
+              <td class="govuk-table__cell">1109</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">BC 04 36 40 A</a></th>
+              <td class="govuk-table__cell">1048</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">PD 04 36 40 C</a></th>
+              <td class="govuk-table__cell">1005</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">QT 04 36 40 C</a></th>
+              <td class="govuk-table__cell">992</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#" class="govuk-link">LK 04 36 40 A</a></th>
+              <td class="govuk-table__cell">987</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
 
+
+
+        {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
 
       </div>
+
     </div>
   </main>
 </div>
-
 
 {% endblock %}

@@ -1,18 +1,83 @@
 {% extends "layouts/main2.html" %}
 
+{% block header %}
+
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{
+  dwpHeader({
+      serviceName: "Bereavement Support Payment",
+      serviceHref: '/index',
+      container: true,
+      navigation: {
+        selectedItem: "/mi/processed/home",
+        items: [
+            {
+                href: "/mi/made/home",
+                text: "Claims made"
+            },
+            {
+                href: "/mi/processed/home",
+                text: "Processed claims"
+            },
+            {
+                href: "/mi/outstanding/home",
+                text: "Outstanding claims"
+            }
+        ]
+    }  
+  })
+}}
+
+<div class="govuk-width-container">
+
+{% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+
+  {{ 
+    dwpHorizontalNavigation({
+          selectedItem: "/mi/processed/home",
+          items: [
+              {
+                text: "Overview",
+                href: "/mi/processed/home",
+                id: "/mi/processed/home"
+              },
+              {
+                text: "Automation",
+                href: "/mi/processed/automation",
+                id: "/mi/automation"
+              },
+              {
+                text: "Disallowed claims",
+                href: "/mi/processed/dissallowed",
+                id: "s-item-3"
+              },
+              {
+                text: "Changes to claims",
+                href: "/mi/processed/changes",
+                id: "s-item-4"
+              }
+          ]
+      })
+  }}
+
+</div>
+
+{% endblock %}
+
 {% block pageTitle %}
-  Start a claim – {{ serviceName }} – GOV.UK Prototype Kit
+  Processed claims overview – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-!-padding-top-2">
+  <main class="govuk-main-wrapper" style="padding-top: 4px">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <!-- <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">Friday 21 February 2025</span>
         <h1 class="govuk-heading-xl">Today's summary</h1>
-      </div>
+      </div> -->
     </div>
   
     <div class="govuk-grid-row">
@@ -36,7 +101,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -44,7 +109,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input value="06" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -52,7 +117,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input value="2024" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -68,7 +133,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -76,7 +141,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -84,7 +149,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input value="2025" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -193,29 +258,10 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-
-        {{ xGovukSecondaryNavigation({
-
-          visuallyHiddenTitle: "Secondary menu",
-          items: [{
-            text: "Overview",
-            href: "#",
-            current: true
-          }, {
-            text: "Automation",
-            href: "#"
-          }, {
-            text: "Dissallowed",
-            href: "#"
-          }, {
-            text: "Changes of circs",
-            href: "#"
-          }]
-        }) }}
-
-        <br><br>
        
-        <!-- <h2 class="govuk-heading-m">Claims processed</h2> -->
+        <h2 class="govuk-heading-l">Processed claims</h2>
+
+        
 
         <div class="govuk-grid-column-one-half" style="
         padding-left: 0px;
@@ -234,7 +280,7 @@
                   Allowed
                 </dt>
                 <dd class="govuk-summary-list__actions">
-                  38
+                  3047
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -242,7 +288,7 @@
                   Dissallowed
                 </dt>
                 <dd class="govuk-summary-list__actions">
-                  8
+                  108
                 </dd>
               </div>
             </dl>
@@ -266,7 +312,7 @@
                   Higher
                 </dt>
                 <dd class="govuk-summary-list__actions">
-                  8
+                  179
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -274,7 +320,7 @@
                   Standard
                 </dt>
                 <dd class="govuk-summary-list__actions">
-                  30
+                  2888
                 </dd>
               </div>
             </dl>
@@ -283,186 +329,13 @@
         </div>
         </div>
 
-        <h2 class="govuk-heading-m">Automation</h2>
+        <h2 class="govuk-heading-m">Average actual clearance time</h2>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              National Insurance contributions
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Success rate
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  98%
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  system down
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  1%
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  could not find based on NI 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  1%
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
+        <p class="govuk-body">This this the A.A.C.T between 1 June 2024 and 1 January 2025.</p>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Marriage
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Success rate
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  56%
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  LEV system down
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  5%
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Names don't match 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  8%
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Child benefit
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Success rate
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  78%
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  System error
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  5%
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Unkown error
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  8%
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Residency
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Success rate
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  56%
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Names don't match
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  5%
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  System error
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  8%
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
+        <img class="govuk-!-text-align-left" id="graph-by-channel" src="/public/images/line-graph.png" alt="Graph split by channel." style="width: 630px">
 
         
-
 
       </div>
     </div>

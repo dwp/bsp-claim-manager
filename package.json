@@ -10,6 +10,7 @@
         "@govuk-prototype-kit/common-templates": "2.0.1",
         "@govuk-prototype-kit/task-list": "2.0.0",
         "@ministryofjustice/frontend": "^3.6.3",
+        "@x-govuk/govuk-prototype-components": "^3.0.9",
         "govuk-frontend": "^5.7.1",
         "govuk-prototype-kit": "13.16.2",
         "gulp": "^5.0.0",

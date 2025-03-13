@@ -14,22 +14,4 @@ serviceHref: '/',
 container:true
 }) }}
 
-{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
-
-{{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Start a new claim',
-      href: '#1'
-    },
-    {
-      text: 'Find a new claim',
-      href: '#2'
-    }
-  ]
-}) }}
-
-<!-- <div class="govuk-width-container app-subnav"><nav><ul><li><a class="govuk-link" href="/">Start a new claim</a></li><li><a class="govuk-link" href="/">Find a claim</a></li></ul></nav></div> -->
-
 {% endblock %}
