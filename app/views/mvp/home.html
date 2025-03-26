@@ -1,61 +1,46 @@
-{% extends "layouts/main2.html" %}
-
-{% block header %}
+{% extends "layouts/mvp.html" %}
 
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 
-{{
-  dwpHeader({
-      serviceName: "Bereavement Support Payment",
-      serviceHref: '/index',
-      container: true,
-      navigation: {
-        selectedItem: "/mi/processed/home",
-        items: [
-            {
-                href: "/mi/made/home",
-                text: "Claims made"
-            },
-            {
-                href: "/mi/processed/home",
-                text: "Processed claims"
-            },
-            {
-                href: "/mi/outstanding/home",
-                text: "Outstanding claims"
-            }
-        ]
-    }  
-  })
-}}
+{% block header %}
+{{ dwpHeader({
+name: "Bereavement Support Payment",
+serviceHref: '/',
+container:true
+}) }}
 
 <div class="govuk-width-container">
 
-{% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+  {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
 
   {{ 
     dwpHorizontalNavigation({
-          selectedItem: "/mi/processed/home",
+          selectedItem: "/mvp/home",
           items: [
               {
-                text: "Overview",
-                href: "/mi/processed/home",
-                id: "/mi/processed/home"
+                text: "Claim overview",
+                href: "/mvp/home",
+                id: "s-item-1"
               },
               {
-                text: "Automation",
-                href: "/mi/processed/automation",
-                id: "/mi/automation"
+                text: "Automated checks",
+                href: "/mvp/automation",
+                id: "/mvp/automation"
+              },
+              {
+                text: "Relationship evidence",
+                href: "/mvp/relationship",
+                id: "/mvp/marriage"
               },
               {
                 text: "Disallowed claims",
-                href: "/mi/processed/dissallowed",
-                id: "s-item-3"
+                href: "/mvp/disallowed",
+                id: "/mvp/disallowed"
               },
               {
                 text: "Changes to claims",
-                href: "/mi/processed/changes",
-                id: "s-item-4"
+                href: "/mvp/changes",
+                id: "/mvp/changes"
               }
           ]
       })
@@ -66,24 +51,17 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Processed claims overview – {{ serviceName }} – GOV.UK Prototype Kit
+  Overview – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper" style="padding-top: 4px">
+  <main class="govuk-main-wrapper" style="padding-top: 4px">  
     <div class="govuk-grid-row">
-      <!-- <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Friday 21 February 2025</span>
-        <h1 class="govuk-heading-xl">Today's summary</h1>
-      </div> -->
-    </div>
-  
-    <div class="govuk-grid-row">
-
-
       <div class="govuk-grid-column-one-third">
+
+        <form class="form" action="/mvp/home-date" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -101,7 +79,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -109,7 +87,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input value="06" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -117,7 +95,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input value="2024" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -133,7 +111,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -141,7 +119,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input value="01" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -149,7 +127,7 @@
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input value="2025" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -170,7 +148,7 @@
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
                 <label class="govuk-label govuk-checkboxes__label" for="type">
                   Online
                 </label>
@@ -178,7 +156,7 @@
               </div>
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
                 <label class="govuk-label govuk-checkboxes__label" for="type-2">
                   Telephone
                 </label>
@@ -212,7 +190,7 @@
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
                 <label class="govuk-label govuk-checkboxes__label" for="status">
                   Married
                 </label>
@@ -258,83 +236,97 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-       
-        <h2 class="govuk-heading-l">Processed claims</h2>
+
+        <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Claim overview</h1>
+        <!-- <p class="govuk-body">Friday 21 February 2025.<br>Updated at 12:30pm.</p><br> -->
+        <p class="govuk-body">Thursday 26 March 2025 at 12:30pm.</p><br>
+        
+        <div class="govuk-grid-row">
+        
+          <div class="govuk-grid-column-one-half">
+            <span class="govuk-caption-xl">Claims made</span>
+            <h1 class="govuk-heading-xl">88</h1>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+        
+          <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Added to Claim Manager</span>
+            <h1 class="govuk-heading-l">60</h1>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Automatically</span>
+            <h1 class="govuk-heading-l">55</h1>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Manually</span>
+            <h1 class="govuk-heading-l">5</h1>
+          </div>
+
+
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"><br>
+
+        <div class="govuk-grid-row">
+        
+          <div class="govuk-grid-column-one-half">
+            <span class="govuk-caption-xl">Claims processed</span>
+            <h1 class="govuk-heading-xl">48</h1>
+          </div>
+
+        </div>
+
+        <h2 class="govuk-heading-m">Claim decision</h2>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Allowed</span>
+            <h1 class="govuk-heading-l">38</h1>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Dissallowed</span>
+            <h1 class="govuk-heading-l">10</h1>
+          </div>
+
+        </div><br>
+
+        <h2 class="govuk-heading-m">Claim rate</h2>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Standard</span>
+            <h1 class="govuk-heading-l">30</h1>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Higher</span>
+            <h1 class="govuk-heading-l">8</h1>
+          </div>
+
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"><br>
 
         
-
-      <div class="govuk-grid-column-one-half" style="
-        padding-left: 0px;
-        padding-right: 15px;">
-
-      <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Decision
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Allowed
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  3047
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Dissallowed
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  108
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-grid-column-one-half" style="
-      padding-right: 0px;
-      padding-left: 15px;">
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Rate
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Higher
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  179
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Standard
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  2888
-                </dd>
-              </div>
-            </dl>
-          </div>
-       
-        </div>
-      </div>
-
         <h2 class="govuk-heading-m">Average actual clearance time</h2>
+        <p class="govuk-body">Enter at date range of at least 5 days.</p>
 
-        <p class="govuk-body">This this the A.A.C.T between 1 June 2024 and 1 January 2025.</p>
-
-        <img class="govuk-!-text-align-left" id="graph-by-channel" src="/public/images/line-graph.png" alt="Graph split by channel." style="width: 630px">
-
+        <br><br>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Export to CVS</a>
+        </p>
         
 
       </div>

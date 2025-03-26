@@ -1,33 +1,13 @@
-{% extends "layouts/main2.html" %}
-
-{% block header %}
+{% extends "layouts/mvp.html" %}
 
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 
-{{
-  dwpHeader({
-      serviceName: "Bereavement Support Payment",
-      serviceHref: '/index',
-      container: true,
-      navigation: {
-        selectedItem: "/mi/processed/home",
-        items: [
-            {
-                href: "/mi/made/home",
-                text: "Claims made"
-            },
-            {
-                href: "/mi/processed/home",
-                text: "Processed claims"
-            },
-            {
-                href: "/mi/outstanding/home",
-                text: "Outstanding claims"
-            }
-        ]
-    }  
-  })
-}}
+{% block header %}
+{{ dwpHeader({
+name: "Bereavement Support Payment",
+serviceHref: '/',
+container:true
+}) }}
 
 <div class="govuk-width-container">
 
@@ -35,27 +15,32 @@
 
   {{ 
     dwpHorizontalNavigation({
-          selectedItem: "/mi/processed/home",
+          selectedItem: "/mvp/disallowed",
           items: [
               {
-                text: "Overview",
-                href: "/mi/processed/home",
-                id: "/mi/processed/home"
+                text: "Claim overview",
+                href: "/mvp/home",
+                id: "s-item-1"
               },
               {
-                text: "Automation",
-                href: "/mi/processed/automation",
-                id: "/mi/automation"
+                text: "Automated checks",
+                href: "/mvp/automation",
+                id: "/mvp/automation"
+              },
+              {
+                text: "Relationship evidence",
+                href: "/mvp/relationship",
+                id: "/mvp/marriage"
               },
               {
                 text: "Disallowed claims",
-                href: "/mi/processed/dissallowed",
-                id: "s-item-3"
+                href: "/mvp/disallowed",
+                id: "/mvp/disallowed"
               },
               {
                 text: "Changes to claims",
-                href: "/mi/processed/changes",
-                id: "s-item-4"
+                href: "/mvp/changes",
+                id: "/mvp/changes"
               }
           ]
       })
@@ -66,22 +51,15 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Processed claims overview – {{ serviceName }} – GOV.UK Prototype Kit
+  Disallowed claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper" style="padding-top: 4px">
-    <div class="govuk-grid-row">
-      <!-- <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Friday 21 February 2025</span>
-        <h1 class="govuk-heading-xl">Today's summary</h1>
-      </div> -->
-    </div>
   
     <div class="govuk-grid-row">
-
 
       <div class="govuk-grid-column-one-third">
 
@@ -212,7 +190,7 @@
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="status">
                   Married
                 </label>
@@ -258,84 +236,62 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-       
-        <h2 class="govuk-heading-l">Processed claims</h2>
 
-        
+        <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Disallowed claims</h1>
+        <p class="govuk-body">Between 1 June 2024 and 1 January 2025.<br>Filtered by: Online, Telephone, Married</p><br>
 
-      <div class="govuk-grid-column-one-half" style="
-        padding-left: 0px;
-        padding-right: 15px;">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Reason claim was dissallowed</caption>
+          <thead class="govuk-table__head">
+            <!-- <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Reason</th>
+              <th scope="col" class="govuk-table__header">%</th>
+            </tr>
+          </thead> -->
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Deceased did not pay enough NI</th>
+              <td class="govuk-table__cell">60 (20%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Claimant over State Pension age</th>
+              <td class="govuk-table__cell">110 (37%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Not in an eligible relationship</th>
+              <td class="govuk-table__cell">0 (0%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">No evidence of relationship</th>
+              <td class="govuk-table__cell">40 (13%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">No evidence of death</th>
+              <td class="govuk-table__cell">20 (6%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Late claim</th>
+              <td class="govuk-table__cell">30 (10%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Claimant has no dependants and is not pregnant</th>
+              <td class="govuk-table__cell">0 (0%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Claimant has no child benefit entitlement</th>
+              <td class="govuk-table__cell">0 (0%)</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total</th>
+              <td class="govuk-table__cell">300 (100%)</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Decision
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Allowed
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  3047
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Dissallowed
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  108
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-grid-column-one-half" style="
-      padding-right: 0px;
-      padding-left: 15px;">
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Rate
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Higher
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  179
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Standard
-                </dt>
-                <dd class="govuk-summary-list__actions">
-                  2888
-                </dd>
-              </div>
-            </dl>
-          </div>
-       
-        </div>
-      </div>
-
-        <h2 class="govuk-heading-m">Average actual clearance time</h2>
-
-        <p class="govuk-body">This this the A.A.C.T between 1 June 2024 and 1 January 2025.</p>
-
-        <img class="govuk-!-text-align-left" id="graph-by-channel" src="/public/images/line-graph.png" alt="Graph split by channel." style="width: 630px">
-
-        
+        <br>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Export to CVS</a>
+        </p>
 
       </div>
     </div>
