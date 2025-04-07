@@ -18,6 +18,25 @@ container:true
           selectedItem: "/mvp/automation",
           items: [
               {
+                text: "Automated checks",
+                href: "/mvp/automation",
+                id: "/mvp/automation"
+              }
+          ]
+      })
+  }}
+
+</div>
+
+<!-- <div class="govuk-width-container">
+
+  {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+
+  {{ 
+    dwpHorizontalNavigation({
+          selectedItem: "/mvp/automation",
+          items: [
+              {
                 text: "Claim overview",
                 href: "/mvp/home",
                 id: "s-item-1"
@@ -46,7 +65,7 @@ container:true
       })
   }}
 
-</div>
+</div> -->
 
 {% endblock %}
 
@@ -134,7 +153,7 @@ container:true
         </div>
   
   
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
         
           <fieldset class="govuk-fieldset">
   
@@ -217,16 +236,16 @@ container:true
           </fieldset>
   
         </div>
-  
+   -->
         {% from "govuk/components/button/macro.njk" import govukButton %}
   
   <div class="govuk-button-group">
     {{ govukButton({
-      text: "Apply filters"
+      text: "Apply dates"
     }) }}
   
     {{ govukButton({
-      text: "Clear filters",
+      text: "Clear dates",
       classes: "govuk-button--secondary"
     }) }}
   </div>
@@ -237,10 +256,12 @@ container:true
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Automated checks</h1>
-        <p class="govuk-body">Between 1 June 2024 and 1 January 2025.<br>Filtered by: Online, Paper, Living together.</p><br>
+        <p class="govuk-body">Between 1 June 2024 and 1 January 2025.</p><br>
+
+        <!-- <p class="govuk-body">Between 1 June 2024 and 1 January 2025.<br>Filtered by: Online, Paper, Living together.</p><br> -->
 
 
-        <div class="govuk-summary-card">
+        <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
               All automated checks
@@ -315,13 +336,13 @@ container:true
               </div>
             </dl>
           </div>
-        </div>
+        </div> -->
 
 
-        <!-- <div class="govuk-summary-card">
+        <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
-              Marriage and civil partnerships
+              Marriage
             </h2>
           </div>
           <div class="govuk-summary-card__content">
@@ -334,7 +355,7 @@ container:true
                   
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                70 (56%)
+                60 (60%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -342,27 +363,93 @@ container:true
                   Failure reasons
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  LEV system down
+                  [Placeholder failure reason]
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 20 (25%)
+                 20 (20%)
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Names don't match 
+                  [Placeholder failure reason]
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 30 (19%)
+                 10 (10%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Placeholder failure reason]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 10 (10%)
                 </dd>
               </div>
             </dl>
           </div>
-        </div> -->
+        </div>
 
         <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Civil partnership
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Successful checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                70 (70%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Placeholder failure reason]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 20 (20%)
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Placeholder failure reason]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 5 (5%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Placeholder failure reason]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 5 (5%)
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
               Child Benefit
@@ -404,9 +491,9 @@ container:true
               </div>
             </dl>
           </div>
-        </div>
+        </div> -->
 
-        <div class="govuk-summary-card">
+        <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
               Residency
@@ -448,12 +535,12 @@ container:true
               </div>
             </dl>
           </div>
-        </div>
+        </div> -->
 
-        <br>
+        <!-- <br>
         <p class="govuk-body">
           <a href="#" class="govuk-link govuk-link--no-visited-state">Export to CSV</a>
-        </p>
+        </p> -->
        
       </div>
     </div>
