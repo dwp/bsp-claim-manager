@@ -1,4 +1,4 @@
-{% extends "layouts/mainstartclaim.html" %}
+{% extends "layouts/mainstartclaim-1.html" %}
 
 {% block pageTitle %}
   Start a claim – {{ serviceName }} – GOV.UK Prototype Kit
@@ -262,7 +262,7 @@
 
 {{ govukRadios({
 classes: "govuk-radios--inline",
-name: "dependantchildren",
+name: "child",
 fieldset: {
 legend: {
   text: "Responsible for a child when partner died?",

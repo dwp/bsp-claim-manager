@@ -1,0 +1,67 @@
+{% extends "layouts/maintasklist-1.html" %}
+
+{% block pageTitle %}
+  How did you verify the claimant's identity? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/stp-1/tasklist" method="post">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "verifiedhow",
+  fieldset: {
+    legend: {
+      text: "How did you verify the claimant’s identity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "kbv",
+      text: "Knowledge based verification (KBV)"
+    },
+    {
+      value: "document",
+      text: "Identity document received"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "onrecord",
+      text: "Claim form matches DWP record",
+      hint: {
+        text: "Only use if the claimant has started or stopped receiving another benefit in the last 12 months."
+      }
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

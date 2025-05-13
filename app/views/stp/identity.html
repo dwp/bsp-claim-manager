@@ -19,18 +19,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/path/of/next/page" method="post">
+    <form class="form" action="/identity-answer" method="post">
 
-      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
      
       {{ govukRadios({
         classes: "govuk-radios--inline",
-        name: "passedsecurity",
+        name: "passedidentity",
         fieldset: {
           legend: {
-            text: "Has the claimant passed security?",
+            text: "Did you verify the claimant's identity?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -50,7 +49,7 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-    </form>
+  
 
     </form>
 

@@ -1,0 +1,68 @@
+{% extends "layouts/maintasklist.html" %}
+
+{% block pageTitle %}
+  Start a claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/stp/tasklist" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "childbenefit",
+        fieldset: {
+          legend: {
+            text: "Has the claimant had Child Benefit entitlement on or since their partner’s death?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "wait",
+            text: "Wait for a decision about their entitlement",
+            hint: {
+              text: "You can advise the claimant to apply"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+  
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

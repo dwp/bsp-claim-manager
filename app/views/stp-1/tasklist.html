@@ -1,4 +1,4 @@
-{% extends "layouts/maintasklist.html" %}
+{% extends "layouts/maintasklist-1.html" %}
 
 {% block pageTitle %}
   Tasks to complete – {{ serviceName }} – GOV.UK Prototype Kit
@@ -13,7 +13,7 @@
             <div class="govuk-grid-column-two-thirds">
                <form action="/form-handler" method="post" novalidate>
 
-                <span class="govuk-caption-xl">Billy Martin</span>
+                <span class="govuk-caption-xl">Robin Smith</span>
                 <h1 class="govuk-heading-xl">AB124578C<br><strong class="govuk-tag govuk-tag--grey">UNFINISHED</strong></h1>
 
                 <div class="govuk-tabs" data-module="govuk-tabs">
@@ -43,7 +43,7 @@
           <ul class="govuk-prototype-kit-task-list__items" style="padding-left:00px">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="/stp/tasklist#details" aria-describedby="eligibility-status">
+                <a href="/stp-1/tasklist#details" aria-describedby="eligibility-status">
                   Claim details
                 </a>
               </span>
@@ -57,28 +57,14 @@
               </span>
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="payment-status">COMPLETED</strong>
             </li>
-
-
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="/stp/payment-details" aria-describedby="read-declaration-status">
+                <a href="#" aria-describedby="read-declaration-status">
                   Payment details
                 </a>
               </span>
-
-              {% if (data['payment'] == "yes") %}
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="address-status">COMPLETED</strong>
-
-              {% else %}
-
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="children-and-pregnancy-status">NOT STARTED</strong>
-            
-              {% endif %}
-
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="payment-status">COMPLETED</strong>
             </li>
-     
-
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="#" aria-describedby="read-declaration-status">
@@ -115,7 +101,6 @@
         </li>
 
         <li>
-
           <h2 class="govuk-prototype-kit-task-list__section">
           Verify evidence
           </h2>
@@ -127,32 +112,16 @@
                 </a>
               </span>
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="death-status">COMPLETED</strong>
-            </li> -->
+            </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="/stp/child-benefit" aria-describedby="contact-details-status">
-                 Child Benefit
+                <a href="#" aria-describedby="contact-details-status">
+                 Relationship
                 </a>
               </span>
-
-              {% if (data['childbenefit'] == "yes") %}
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="address-status">COMPLETED</strong>
-
-              {% elseif (data['childbenefit'] == "wait") %}
-
-              <strong class="govuk-tag govuk-tag--light-blue govuk-prototype-kit-task-list__tag" id="children-and-pregnancy-status">PENDING</strong>
-            
-              {% else %}
-
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="children-and-pregnancy-status">NOT STARTED</strong>
-            
-              {% endif %}
-
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="relationship-status">COMPLETED</strong>
             </li>
-
-
-            <!-- <li class="govuk-prototype-kit-task-list__item">
+            <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="#" aria-describedby="list-convictions-status">
                   National Insurance contributions
@@ -164,11 +133,12 @@
 
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="/stp/identity" aria-describedby="list-convictions-status">
+                <a href="/stp-1/identity" aria-describedby="list-convictions-status">
                   Identity
                 </a>
               </span>
-              {% if (data['passedidentity'] == "yes") %}
+
+              {% if (data['passedidentity1'] == "yes") %}
 
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="address-status">COMPLETED</strong>
 
@@ -178,28 +148,28 @@
             
               {% endif %}
             </li>
-          </ul>
-        </li>
 
-        {% if (data['passedidentity'] == "yes" and data['childbenefit'] == "yes" and data['payment'] == "yes" ) %}
+            {% if (data['passedidentity1'] == "yes") %}
        
-        <li>          
-          <h2 class="govuk-prototype-kit-task-list__section">
-         Submit claim
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items" style="padding-left:00px">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="" aria-describedby="contact-details-status">
-                 Check and confirm
-                </a>
-              </span>
+            <li>          
+              <h2 class="govuk-prototype-kit-task-list__section">
+             Submit claim
+              </h2>
+              <ul class="govuk-prototype-kit-task-list__items" style="padding-left:00px">
+                <li class="govuk-prototype-kit-task-list__item">
+                  <span class="govuk-prototype-kit-task-list__task-name">
+                    <a href="" aria-describedby="contact-details-status">
+                     Check and confirm
+                    </a>
+                  </span>
+                </li>
+              </ul>
             </li>
+    
+            {% endif %}
+
           </ul>
         </li>
-
-        {% endif %}
-
 
       </ol>
 
@@ -218,7 +188,7 @@
                           Full name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Billy Martin
+                          Robin Smith
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -239,7 +209,7 @@
                           Date of birth
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          24 June 1984
+                          10 September 1980
                         </dd>
                       </div>
                     </dl>
@@ -251,7 +221,7 @@
                           Full name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                         Jordan Martin
+                          Alex Smith
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -264,7 +234,7 @@
                           National Insurance number
                         </dt>
                         <dd class="govuk-summary-list__value">
-                         CD123456E
+                        CB123456E
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -272,7 +242,7 @@
                           Date of death
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          1 May 2025
+                        30 April 2025
                         </dd>
                       </div>
                     </dl>
@@ -284,12 +254,10 @@
                           Date of claim
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          17 May 2025
+                          16 May 2025
                         </dd>
                       </div>
                     </dl>
-
-                    {% if (data['payment'] == "yes") %}
 
                     <h3 class="govuk-heading-m">Payment details</h3>
                     <dl class="govuk-summary-list">
@@ -298,7 +266,7 @@
                           Name on account
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Billy Martin
+                          Robin Smith
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -323,9 +291,6 @@
                         </dd>
                       </div>
                     </dl>
-                  
-                    {% endif %}
-                   
 
                     <h3 class="govuk-heading-m">Contact details</h3>
                     <dl class="govuk-summary-list">
@@ -334,7 +299,7 @@
                           Address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          8 Tower Road<br>London<br>AB12 3CD
+                          20 River Road<br>Edinburgh<br>AB12 3CD
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -357,37 +322,6 @@
                       </div>
                     </dl>
 
-                    <h3 class="govuk-heading-m">Dependent children</h3>
-                    <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Dependent children
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          Yes
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> name</span>
-                          </a>
-                        </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Preganant
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          No
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> name</span>
-                          </a>
-                        </dd>
-                      </div>
-                    </dl>
-
-                    
                     <h3 class="govuk-heading-m">Relationship</h3>
                     <dl class="govuk-summary-list">
                       <div class="govuk-summary-list__row">
@@ -395,7 +329,7 @@
                           Relationship
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Living together
+                          Married
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -403,19 +337,45 @@
                           </a>
                         </dd>
                       </div>
-                      <!-- <div class="govuk-summary-list__row">
+                      <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Evidence
+                          Country
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Searchlight
+                          England
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
                             Change<span class="govuk-visually-hidden"> name</span>
                           </a>
                         </dd>
-                      </div> -->
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                          Certificate ID
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                        575982
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                          Date 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          22 Decemeber 2016
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div>
                     </dl>
 
                     <h3 class="govuk-heading-m">Death</h3>
@@ -460,29 +420,8 @@
                       </div>
                     </dl>
 
-                    {% if (data['childbenefit'] == "yes") %}
-
-                    <h3 class="govuk-heading-m">Child Benefit</h3>
-                    <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Child Benefit
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          Yes
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> name</span>
-                          </a>
-                        </dd>
-                      </div>
-                    </dl>
- 
-                    {% endif %}
-
                   </div>
-                </div>
+</div>
 
 
               </form>
@@ -495,77 +434,51 @@
               <div class="dwp-timeline">
                 <ol class="dwp-timeline__items">
 
-                  {% if (data['passedidentity'] == "yes") %}
-                  <li class="dwp-timeline__item">
-                    <h2 class="dwp-timeline__heading">Identity verified </h2>
-                    <p class="dwp-timeline__by-line">By [Agent name]</p>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
-                  </li>
-                  {% endif %}
+                  {% if (data['passedidentity1'] == "yes") %}
 
-                  {% if (data['childbenefit'] == "yes") %}
                   <li class="dwp-timeline__item">
-                    <h2 class="dwp-timeline__heading">Child Benefit verified</h2>
-                    <p class="dwp-timeline__by-line">By [Agent name]</p>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <h2 class="dwp-timeline__heading">Identity verified</h2>
+                    <p class="dwp-timeline__by-line">By [Agents name]</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
-                  {% endif %}
 
-                  {% if (data['childbenefit'] == "wait") %}
-                  <li class="dwp-timeline__item">
-                    <h2 class="dwp-timeline__heading">Waiting for Child Benefit</h2>
-                    <p class="dwp-timeline__by-line">By [Agent name]</p>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
-                  </li>
                   {% endif %}
-
-                  {% if (data['payment'] == "yes") %}
-                  <li class="dwp-timeline__item">
-                    <h2 class="dwp-timeline__heading">Payment details recorded</h2>
-                    <p class="dwp-timeline__by-line">By [Agent name]</p>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
-                  </li>
-                  {% endif %}
-
+                
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Relationship verified</h2>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Contributions verified</h2>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Death verified</h2>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Deceased details verified</h2>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Claim details verified</h2>
-                    <p class="dwp-timeline__datetime">17 May 2025</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
                   </li>
                 <li class="dwp-timeline__item">
                   <h2 class="dwp-timeline__heading">Relationship details recorded</h2>
-                  <p class="dwp-timeline__by-line">By [Agent name]</p>
-                  <p class="dwp-timeline__datetime">17 May 2025</p>
+                  <p class="dwp-timeline__datetime">16 May 2025</p>
                 </li>
                 <li class="dwp-timeline__item">
                   <h2 class="dwp-timeline__heading">Communication needs recorded</h2>
-                  <p class="dwp-timeline__by-line">By [Agent name]</p>
-                  <p class="dwp-timeline__datetime">17 May 2025</p>
+                  <p class="dwp-timeline__datetime">16 May 2025</p>
                 </li>
                 <li class="dwp-timeline__item">
                   <h2 class="dwp-timeline__heading">Address recorded</h2>
-                  <p class="dwp-timeline__by-line">By [Agent name]</p>
-                  <p class="dwp-timeline__datetime">17 May 2025</p>
+                  <p class="dwp-timeline__datetime">16 May 2025</p>
                 </li>
                 <li class="dwp-timeline__item">
                   <h2 class="dwp-timeline__heading">Claim details recorded</h2>
-                  <p class="dwp-timeline__by-line">By [Agent name]</p>
-                  <p class="dwp-timeline__datetime">17 May 2025</p>
+                  <p class="dwp-timeline__datetime">16 May 2025</p>
                 </li>
                 </ol>
               </div>

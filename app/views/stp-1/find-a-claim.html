@@ -1,4 +1,4 @@
-{% extends "layouts/mainfindclaim.html" %}
+{% extends "layouts/mainfindclaim-1.html" %}
 
 {% block pageTitle %}
   Start a claim – {{ serviceName }} – GOV.UK Prototype Kit
@@ -15,7 +15,7 @@
 
   <div class="moj-search">
 
-    <form action="#" method="post">
+    <form action="/stp-1/find-a-claim-results" method="post">
   
       <div class="govuk-form-group">
       
@@ -23,25 +23,17 @@
           <span>Enter the claimant’s National Insurance number</span>
         </label>
   
-        <input class="govuk-input moj-search__input " value="AB 12 34 56 C" id="search" name="search" type="search" aria-describedby="search-hint">
+        <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
   
       </div>
   
       <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
         Search
       </button>
-  
-    </form>
+    
+    </form> 
  
   </div>
-
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-6">Results</h2>
-
-    <p class="govuk-body-l govuk-!-margin-bottom-2">
-      <a href="/stp-1/tasklist" class="govuk-link">Unfinished claim</a>
-    </p>
-    <p class="govuk-body-s">Robin Smith<br>16 May 2025</p>
 
   </div>
 </div>
