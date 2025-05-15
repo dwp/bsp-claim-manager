@@ -139,11 +139,15 @@
               </span>
 
               {% if (data['passedidentity1'] == "yes") %}
-
+ 
               <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="address-status">COMPLETED</strong>
-
+ 
+              {% elseif (data['passedidentity1'] == "no") %}
+ 
+              <strong class="govuk-tag govuk-tag--light-blue govuk-prototype-kit-task-list__tag" id="children-and-pregnancy-status">PENDING</strong>
+            
               {% else %}
-
+ 
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="children-and-pregnancy-status">NOT STARTED</strong>
             
               {% endif %}
@@ -209,7 +213,7 @@
                           Date of birth
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          10 September 1980
+                          24 June 1984
                         </dd>
                       </div>
                     </dl>
@@ -322,7 +326,13 @@
                       </div>
                     </dl>
 
-                    <h3 class="govuk-heading-m">Relationship</h3>
+                    <div style="display: flex; flex-direction: row;">
+                      <h3 class="govuk-heading-m">Relationship</h3>
+                      <span style="color: #6F777B; float: right; font-size: 0.7em; margin: 0.4em 0 0; position: relative; margin-left: auto;">
+                        <img src="/public/images/icon-verified.svg" style="position: absolute; top: 0; left: -1.3em; width: 1em; height: 1.1em;" />
+                        Verified
+                      </span>
+                    </div>
                     <dl class="govuk-summary-list">
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
@@ -368,57 +378,153 @@
                           Date 
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          22 Decemeber 2016
+                          22 December 2015
                         </dd>
-                        <dd class="govuk-summary-list__actions">
+                        <!-- <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
                             Change<span class="govuk-visually-hidden"> name</span>
                           </a>
-                        </dd>
+                        </dd> -->
                       </div>
                     </dl>
 
-                    <h3 class="govuk-heading-m">Death</h3>
-                    <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Evidence
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          Certificate
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> name</span>
-                          </a>
-                        </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Date
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          7 May 2023
-                        </dd>
-                      </div>
-                    </dl>
+                    <div style="display: flex; flex-direction: row;">
+                      <h3 class="govuk-heading-m">Death</h3>
+                      <span style="color: #6F777B; float: right; font-size: 0.7em; margin: 0.4em 0 0; position: relative; margin-left: auto;">
+                        <img src="/public/images/icon-verified.svg" style="position: absolute; top: 0; left: -1.3em; width: 1em; height: 1.1em;" />
+                        Verified
+                      </span>
+                    </div>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            Evidence
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Searchlight
+                          </dd>
+                          <!-- <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd> -->
+                        </div>
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            Date
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            30 April 2025
+                          </dd>
+                        </div>
+                      </dl>
                     
-                    <h3 class="govuk-heading-m">National insurance contributions</h3>
-                    <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                          Year
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          2021
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> name</span>
-                          </a>
-                        </dd>
+                      <div style="display: flex; flex-direction: row;">
+                        <h3 class="govuk-heading-m">National insurance contributions</h3>
+                        <span style="color: #6F777B; float: right; font-size: 0.7em; margin: 0.4em 0 0; position: relative; margin-left: auto;">
+                          <img src="/public/images/icon-verified.svg" style="position: absolute; top: 0; left: -1.3em; width: 1em; height: 1.1em;" />
+                          Verified
+                        </span>
                       </div>
-                    </dl>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            Year
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            2021
+                          </dd>
+                          <!-- <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd> -->
+                        </div>
+                      </dl>
+
+                      {% if (data['passedidentity1'] == "yes" and data['verifiedhow'] == "kbv") %}
+
+                      <h3 class="govuk-heading-m">Identity</h3>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                           Evidence
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Knowledge based verification (KBV)
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/stp-1/identity">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      {% endif %}
+
+                      {% if (data['passedidentity1'] == "yes" and data['verifiedhow'] == "documents") %}
+
+                      <h3 class="govuk-heading-m">Identity</h3>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                           Evidence
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Identity documents
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/stp-1/identity">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      </dl>
+                      
+                      {% endif %}
+
+                      {% if (data['passedidentity1'] == "yes" and data['verifiedhow'] == "onrecord") %}
+
+                      <h3 class="govuk-heading-m">Identity</h3>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                           Evidence
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Claim form matches DWP record
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/stp-1/identity">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      </dl>
+                      
+                      {% endif %}
+
+                      {% if (data['passedidentity1'] == "no") %}
+
+                      <h3 class="govuk-heading-m">Identity</h3>
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                           Evidence
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Missing
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="/stp-1/identity">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      {% endif %}
 
                   </div>
 </div>
@@ -434,7 +540,27 @@
               <div class="dwp-timeline">
                 <ol class="dwp-timeline__items">
 
-                  {% if (data['passedidentity1'] == "yes") %}
+                  {% if (data['passedidentity1'] == "no" and data['donext'] == "callback") %}
+                  <li class="dwp-timeline__item">
+                    <h2 class="dwp-timeline__heading">Identity verified</h2>
+                    <p class="dwp-timeline__by-line">By [Agents name]</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
+                    <p class="dwp-timeline__by-line">Call again later.</p>
+                  </li>
+                  {% endif %}
+
+                  {% if (data['passedidentity1'] == "no" and data['donext'] == "wait") %}
+                  
+                  <li class="dwp-timeline__item">
+                    <h2 class="dwp-timeline__heading">Identity verified</h2>
+                    <p class="dwp-timeline__by-line">By [Agents name]</p>
+                    <p class="dwp-timeline__datetime">16 May 2025</p>
+                    <p class="dwp-timeline__by-line">Identity documents requested.</p>
+                  </li>
+                  {% endif %}
+
+
+                  {% if (data['passedidentity1'] == "yes" ) %}
 
                   <li class="dwp-timeline__item">
                     <h2 class="dwp-timeline__heading">Identity verified</h2>
