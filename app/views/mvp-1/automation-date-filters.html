@@ -15,11 +15,11 @@ container:true
 
   {{ 
     dwpHorizontalNavigation({
-          selectedItem: "/mvp/automation",
+          selectedItem: "/mvp-1/automation",
           items: [
               {
                 text: "Automated checks",
-                href: "/mvp/automation",
+                href: "/mvp-1/automation",
                 id: "/mvp/automation"
               }
           ]
@@ -77,10 +77,7 @@ container:true
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper" style="padding-top: 4px">
-  
     <div class="govuk-grid-row">
-
-      <form class="form" action="/mvp-1/automation-date" method="post">
 
       <div class="govuk-grid-column-one-third">
 
@@ -100,7 +97,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input value="1" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -108,7 +105,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input value="1" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -116,7 +113,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input value="2025" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -132,7 +129,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input value="1" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -140,7 +137,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input value="6" class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -148,7 +145,7 @@ container:true
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input value="2025" class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -169,7 +166,7 @@ container:true
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="type">
                   Online
                 </label>
@@ -177,7 +174,7 @@ container:true
               </div>
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="type-2">
                   Telephone
                 </label>
@@ -198,7 +195,7 @@ container:true
   
         </div>
   
-        <!-- <div class="govuk-form-group">
+        <div class="govuk-form-group">
   
           <fieldset class="govuk-fieldset">
   
@@ -211,7 +208,7 @@ container:true
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete">
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="status">
                   Married
                 </label>
@@ -227,7 +224,7 @@ container:true
               </div>
   
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="status-3">
                   Living together
                 </label>
@@ -238,8 +235,8 @@ container:true
   
           </fieldset>
   
-        </div>  -->
-
+        </div>
+  
         {% from "govuk/components/button/macro.njk" import govukButton %}
   
   <div class="govuk-button-group">
@@ -258,9 +255,9 @@ container:true
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl" style="margin-bottom: 10px;">Today’s automated checks</h1>
-        <p class="govuk-body">Thursday 12 June 2025 at 12:30pm.</p>
-
+        <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Automated checks</h1>
+        <p class="govuk-body">Between 1 January 2025 and 1 June 2025.<br>Filtered by: Online, Telephone, Married, Living together.</p>
+        
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -273,7 +270,8 @@ container:true
           </div>
         </details>
 
-        <!-- <p class="govuk-body">Marriage and civil partnership automated checks added 3 April 2025.</p> -->
+        <!-- <p class="govuk-body">Between 1 June 2024 and 1 January 2025.<br>Filtered by: Online, Paper, Living together.</p><br> -->
+
 
         <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
@@ -291,7 +289,7 @@ container:true
                   
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 4 (40%)
+                 2 (20%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -302,11 +300,177 @@ container:true
                  
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  6 (60%)
+                  8 (80%)
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              National Insurance contributions
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Successful checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 90 (90%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  system down
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  10 (1%)
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  could not find based on NI 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 10 (1%)
+                </dd>
               </div>
             </dl>
           </div>
         </div> -->
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              All automated checks
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Successful checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 20 (20%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failed checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  80 (80%)
+              </div>
+            </dl>
+          </div>
+        </div>
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              National Insurance contributions
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Successful checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 80 (80%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Not enough National Insurance contributions
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  10 (1%)
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Problem with the service
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 10 (1%)
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Child Benefit
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Successful checks
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 80 (78%)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failure reasons
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  System error
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 20 (15%)
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Unkown error
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                 10 (7%)
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
@@ -324,7 +488,7 @@ container:true
                   
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                4 (40%)
+                40 (40%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -335,7 +499,7 @@ container:true
                   More than one match
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 2 (20%)
+                 20 (20%)
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -345,7 +509,7 @@ container:true
                   Cannot match enough data from returned records
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -356,7 +520,7 @@ container:true
                   No records returned
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -367,7 +531,7 @@ container:true
                   Records for this date of marriage are not available yet
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -378,13 +542,13 @@ container:true
                   Problem with the service
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
             </dl>
           </div>
         </div>
-
+<!-- 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
@@ -401,7 +565,7 @@ container:true
                   
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                5 (50%)
+                50 (50%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -412,7 +576,7 @@ container:true
                   More than one match
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -422,7 +586,7 @@ container:true
                   Cannot match enough data from returned records
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -433,7 +597,7 @@ container:true
                   No records returned
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -444,7 +608,7 @@ container:true
                   Records for this date of civil partnership are not available
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -455,52 +619,7 @@ container:true
                   Problem with the service
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-
-        <!-- <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Child Benefit
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Successful checks
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                 8 (78%)
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  System error
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                 2 (15%)
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Unkown error
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                 1 (7%)
+                 10 (10%)
                 </dd>
               </div>
             </dl>
@@ -523,7 +642,7 @@ container:true
                   
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  4 (40%)
+                  40 (40%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -534,7 +653,7 @@ container:true
                   Addresses do not match
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 3 (30%)
+                 30 (30%)
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -544,7 +663,7 @@ container:true
                  Cannot find address
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -555,7 +674,7 @@ container:true
                  Problem with residency service
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
+                 10 (10%)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -566,51 +685,7 @@ container:true
                  Problem with internal service
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                 1 (10%)
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              National Insurance contributions
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Successful checks
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                 8 (80%)
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failure reasons
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Not enough National Insurance contributions
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  1 (1%)
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 Problem with the service
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                 1 (1%)
+                 10 (10%)
                 </dd>
               </div>
             </dl>
@@ -621,10 +696,7 @@ container:true
         <p class="govuk-body">
           <a href="#" class="govuk-link govuk-link--no-visited-state">Export to CSV</a>
         </p> -->
-
        
-
-
       </div>
     </div>
   </main>
