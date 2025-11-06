@@ -9,7 +9,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
-
     // STP Did you verify the claimant’s identity?
 
     router.post('/identity-answer', function(request, response) {
