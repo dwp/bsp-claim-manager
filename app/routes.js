@@ -8,6 +8,10 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 87a4d44 (Edit routes.js)
 
     // STP Did you verify the claimant’s identity?
 
