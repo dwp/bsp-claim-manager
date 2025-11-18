@@ -197,58 +197,52 @@ container:true
           </fieldset>
   
         </div>
-  
-        <!-- <div class="govuk-form-group">
-  
+
+        <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-  
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-  
-              Relationship
-  
+              <h1 class="govuk-fieldset__heading">
+                Relationship
+              </h1>
             </legend>
-  
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete">
-                <label class="govuk-label govuk-checkboxes__label" for="status">
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month" checked>
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  All
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Married
                 </label>
-  
               </div>
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
-                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Civil partnership
                 </label>
-  
               </div>
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
-                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Living together
                 </label>
-  
               </div>
-  
             </div>
-  
           </fieldset>
-  
-        </div>  -->
+        </div>
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
   
   <div class="govuk-button-group">
     {{ govukButton({
-      text: "Filter dates"
+      text: "Filter filters"
     }) }}
   
     {{ govukButton({
-      text: "Clear dates",
+      text: "Clear filters",
       classes: "govuk-button--secondary"
     }) }}
   </div>

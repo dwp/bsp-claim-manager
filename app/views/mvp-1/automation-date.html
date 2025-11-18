@@ -79,6 +79,8 @@ container:true
   <main class="govuk-main-wrapper" style="padding-top: 4px">
     <div class="govuk-grid-row">
 
+    <form class="form" action="/mvp-1/automation" method="post">
+
       <div class="govuk-grid-column-one-third">
 
         <div class="govuk-form-group">
@@ -194,58 +196,52 @@ container:true
           </fieldset>
   
         </div>
-  
-        <!-- <div class="govuk-form-group">
-  
+
+        <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-  
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-  
-              Relationship
-  
+              <h1 class="govuk-fieldset__heading">
+                Relationship
+              </h1>
             </legend>
-  
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete">
-                <label class="govuk-label govuk-checkboxes__label" for="status">
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  All
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year" checked>
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Married
                 </label>
-  
               </div>
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
-                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Civil partnership
                 </label>
-  
               </div>
-  
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
                   Living together
                 </label>
-  
               </div>
-  
             </div>
-  
           </fieldset>
-  
-        </div> -->
+        </div>
   
         {% from "govuk/components/button/macro.njk" import govukButton %}
   
   <div class="govuk-button-group">
     {{ govukButton({
-      text: "Filter dates"
+      text: "Filter filters"
     }) }}
   
     {{ govukButton({
-      text: "Clear dates",
+      text: "Clear filters",
       classes: "govuk-button--secondary"
     }) }}
   </div>
@@ -256,7 +252,7 @@ container:true
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Automated checks</h1>
-        <p class="govuk-body">Between 1 January 2025 and 1 June 2025.<br>Filtered by: Online, Telephone.</p><br>
+        <p class="govuk-body">Between 1 January 2025 and 1 June 2025.<br>Filtered by: Online, Telephone, Married.</p><br>
         
         <details class="govuk-details">
           <summary class="govuk-details__summary">
@@ -427,7 +423,7 @@ container:true
           </div>
         </div>
 
-        <div class="govuk-summary-card">
+        <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
               Civil partnership
@@ -502,7 +498,7 @@ container:true
               </div>
             </dl>
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
@@ -547,7 +543,7 @@ container:true
             </dl>
           </div>
         </div> -->
-
+<!-- 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
@@ -612,7 +608,7 @@ container:true
               </div>
             </dl>
           </div>
-        </div>
+        </div> -->
 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
