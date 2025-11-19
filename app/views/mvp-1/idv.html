@@ -15,7 +15,7 @@ container:true
 
   {{ 
     dwpHorizontalNavigation({
-          selectedItem: "/mvp-1/home",
+          selectedItem: "/mvp-1/idv",
           items: [
               {
                 text: "Claim overview",
@@ -26,6 +26,11 @@ container:true
                 text: "Automated checks",
                 href: "/mvp-1/automation",
                 id: "/mvp-1/automation"
+              },
+              {
+                text: "Identity verification",
+                href: "/mvp-1/idv",
+                id: "/mvp-1/idv"
               }
           ]
       })
@@ -222,35 +227,43 @@ container:true
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Today's claim overview</h1>
+        <h1 class="govuk-heading-xl" style="margin-bottom: 14px;">Today's identity verficiation</h1>
         <!-- <p class="govuk-body">Friday 21 February 2025.<br>Updated at 12:30pm.</p><br> -->
         <p class="govuk-body">Thursday 26 March 2025 at 12:30pm.</p><br>
         
         <div class="govuk-grid-row">
         
           <div class="govuk-grid-column-two-thirds">
-            <span class="govuk-caption-xl">Added to Claim Manager</span>
+            <span class="govuk-caption-xl">Claims with IDV verified</span>
             <h1 class="govuk-heading-xl">60</h1>
           </div>
 
         </div>
 
-        <h2 class="govuk-heading-m">Claims added</h2>
+        <h2 class="govuk-heading-m">Verification method</h2>
 
         <div class="govuk-grid-row">
 
           <div class="govuk-grid-column-one-third">
-            <span class="govuk-caption-l">Automatically</span>
-            <h1 class="govuk-heading-l">55</h1>
+            <span class="govuk-caption-l">Security questions</span>
+            <h1 class="govuk-heading-l">54</h1>
           </div>
 
           <div class="govuk-grid-column-one-third">
-            <span class="govuk-caption-l">Manually</span>
-            <h1 class="govuk-heading-l">5</h1>
+            <span class="govuk-caption-l">Identity documents</span>
+            <h1 class="govuk-heading-l">2</h1>
           </div>
 
+          <div class="govuk-grid-column-one-third">
+            <span class="govuk-caption-l">Matches DWP record</span>
+            <h1 class="govuk-heading-l">4</h1>
+          </div>
 
         </div>
+
+        <h2 class="govuk-heading-m">Disallowance number</h2>
+
+        <h2 class="govuk-heading-m">Oustanding claims requiring idv</h2>
 
         <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br> -->
 
