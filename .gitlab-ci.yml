@@ -34,4 +34,6 @@ include:
 heroku-site-publish:
   extends: .heroku-site-publish-template
   before_script:
-    - heroku config:set -a ${APP_NAME} NPM_TOKEN=${NPM_AUTH_TOKEN}
+    - heroku config:set -a ${APP_NAME}
+        NPM_TOKEN=${NPM_AUTH_TOKEN}
+        NPM_CONFIG_//gitlab.com/api/v4/projects/82735932/packages/npm/:_authToken=${NPM_AUTH_TOKEN}
