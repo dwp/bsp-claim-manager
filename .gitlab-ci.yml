@@ -34,6 +34,4 @@ include:
 heroku-site-publish:
   extends: .heroku-site-publish-template
   before_script:
-    - heroku config:set -a ${APP_NAME} \
-        "NPM_CONFIG_@DWP-GOVUK:REGISTRY=https://gitlab.com/api/v4/packages/npm/" \
-        "NPM_CONFIG_//GITLAB.COM/API/V4/PACKAGES/NPM/:_AUTHTOKEN=${NPM_AUTH_TOKEN}"
+    - heroku config:set -a ${APP_NAME} NPM_TOKEN=${NPM_AUTH_TOKEN}
