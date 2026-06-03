@@ -1,11 +1,13 @@
 {
+    "engines": {
+        "node": "20.x"
+    },
     "scripts": {
         "dev": "govuk-prototype-kit dev",
         "serve": "govuk-prototype-kit serve",
         "start": "govuk-prototype-kit start"
     },
     "dependencies": {
-        "20": "^1.0.0",
         "@dwp-govuk/govuk-prototype-kit": "^13.20.1",
         "@dwp/dwp-frontend": "3.4.0",
         "@govuk-prototype-kit/common-templates": "2.0.1",
